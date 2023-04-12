@@ -3894,9 +3894,9 @@ spawn(function()
         pcall(function()
             while wait() do
             if _G.AutoFarm == false then
-             statsfarmer:Set("AutoFarm : ❌")
+             statsfarmer:Set("AutoFarm : ❌ ")
              elseif _G.AutoFarm == true then
-             statsfarmer:Set("AutoFarm : ✅")
+             statsfarmer:Set("AutoFarm : ✅ ")
               end
               end
               end)
@@ -4042,7 +4042,7 @@ if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false 
                      game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter")
                       if game:GetService("Workspace").Enemies:FindFirstChild("Urban [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Deandre [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Diablo [Lv. 1750]") then
 _G.AutoFarm = false
-end
+
                        for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
                             if v.Name == "Urban [Lv. 1750]" or v.Name == "Diablo [Lv. 1750]" or v.Name == "Deandre [Lv. 1750]" then
                                 if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
@@ -4059,6 +4059,7 @@ end
                                         game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
                                     until not _G.combo or not v.Parent or v.Humanoid.Health <= 0
 _G.AutoFarm = true                                
+end
 end
                             end
                         end
@@ -5038,7 +5039,7 @@ task.spawn(
             function()
                 while wait() do
                     if game.PlaceId == 2753915549 then
-                        WolrdSet3:SetText("Wolrd : 1 " .. "✅")
+                        WolrdSet3:Set("Wolrd : 1 " .. "✅")
                     end
                 end
             end
@@ -5051,7 +5052,7 @@ task.spawn(
             function()
                 while wait() do
                     if game.PlaceId == 4442272183 then
-                        WolrdSet:SetText("Wolrd : 2 " .. "✅")
+                        WolrdSet:Set("Wolrd : 2 " .. "✅")
                     end
                 end
             end
@@ -5064,7 +5065,7 @@ task.spawn(
             function()
                 while wait() do
                     if game.PlaceId == 7449423635 then
-                        WolrdSet1:SetText("Wolrd : 3 " .. "✅")
+                        WolrdSet1:Set("Wolrd : 3 " .. "✅")
                     end
                 end
             end
@@ -5081,40 +5082,40 @@ task.spawn(
                     for i, v in pairs(
                         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventoryWeapons")
                     ) do
-                        if v.Name == "Saber" then
+                        if v.Name == "Saber" or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Saber") then
                             Saber:Set("✅ : Saber")
                         end
-                        if v.Name == "Rengoku" then
+                        if v.Name == "Rengoku" or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Rengoku") then
                             Rengoku:Set("✅ : Rengoku")
                         end
-                        if v.Name == "Midnight Blade" then
+                        if v.Name == "Midnight Blade" or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Midnight Blade") then
                             MidnightBlade:Sett("✅ : Midnight Blade")
                         end
-                        if v.Name == "Dragon Trident" then
+                        if v.Name == "Dragon Trident" or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Dragon Trident") then
                             DragonTrident:Set("✅ : Dragon Trident")
                         end
-                        if v.Name == "Yama" then
+                        if v.Name == "Yama" or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Yama") then
                             Yama:Sett("✅ : Yama")
                         end
-                        if v.Name == "Buddy Sword" then
+                        if v.Name == "Buddy Sword" or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Buddy Sword") then
                             BuddySword:Set("✅ : Buddy Sword")
                         end
-                        if v.Name == "Canvander" then
+                        if v.Name == "Canvander" or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Canvander") then
                             Canvander:Set("✅ : Canvander")
                         end
-                        if v.Name == "Twin Hooks" then
+                        if v.Name == "Twin Hooks" or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Twin Hooks") then
                             TwinHooks:Set("✅ : Twin Hooks")
                         end
-                        if v.Name == "Spikey Trident" then
+                        if v.Name == "Spikey Trident" or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Spikey Trident") then
                             SpikeyTrident:Sett("✅ : Spikey Trident")
                         end
-                        if v.Name == "Hallow Scythe" then
+                        if v.Name == "Hallow Scythe" or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Hallow Scythe") then
                             HallowScythe:Set("✅ : Hallow Scythe")
                         end
-                        if v.Name == "Dark Dagger" then
+                        if v.Name == "Dark Dagger" or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Dark Dagger") then
                             DarkDagger:Set("✅ : Dark Dagger")
                         end
-                        if v.Name == "Tushita" then
+                        if v.Name == "Tushita" or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Tushita") then
                             Tushita:Set("✅ : Tushita")
                         end
                     end
@@ -5132,13 +5133,13 @@ task.spawn(
                     for i, v in pairs(
                         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventoryWeapons")
                     ) do
-                        if v.Name == "Kabucha" then
+                        if v.Name == "Kabucha" or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Kabucha") then
                             Kabucha:SetTextSet("✅ : Kabucha")
                         end
-                        if v.Name == "Acidum Rifle" then
+                        if v.Name == "Acidum Rifle" or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Acidum Rifle") then
                             AcidumRifle:Set("✅ : Acidum Rifle")
                         end
-                        if v.Name == "Bizarre Rifle" then
+                        if v.Name == "Bizarre Rifle" or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Bizarre Rifle") then
                             BizarreRifle:Set("✅ : Bizarre Rifle")
                         end
                 end
@@ -5158,16 +5159,16 @@ task.spawn(
                     for i, v in pairs(
                         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventoryWeapons")
                     ) do
-                        if v.Name == "Shisui" then
+                        if v.Name == "Shisui" or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Shisui") then
                             Shisui:Set("✅ : Shisui")
                         end
-                        if v.Name == "Saddi" then
+                        if v.Name == "Saddi" or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Saddi") then
                             Saddi:Set("✅ : Saddi")
                         end
-                        if v.Name == "Wando" then
+                        if v.Name == "Wando" or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Wando") then
                             Wando:Set("✅ : Wando")
                         end
-                        if v.Name == "True Triple Katana" then
+                        if v.Name == "True Triple Katana" or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("True Triple Katana") then
                             TrueTripleKatana:Set("✅ : True Triple Katana")
                         end
                     end
@@ -5180,22 +5181,22 @@ task.spawn(
 task.spawn(
     function()
         while task.wait() do
-            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySuperhuman", true) == 1 then
+            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySuperhuman", true) == 1 or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("BuySuperhuman") then then
                 Superhuman:Set("✅ : Superhuman")
             end
-            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDeathStep", true) == 1 then
+            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDeathStep", true) == 1 or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("BuyDeathStep") then then
                 DeathStep:SetT("✅ : Death Step")
             end
-            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKarate", true) == 1 then
+            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKarate", true) == 1 or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("BuySharkmanKarate") then then
                 SharkmanKarate:Set("✅ : Sharkman Karate")
             end
-            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw", true) == 1 then
+            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw", true) == 1 or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("BuyElectricClaw") then then
                 ElectricClaw:Set("✅ : Electric Claw")
             end
-            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDragonTalon", true) == 1 then
+            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDragonTalon", true) == 1 or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("BuyDragonTalon") then then
                 DragonTalon:Set("✅ : Dragon Talon")
             end
-            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyGodhuman", true) == 1 then
+            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyGodhuman", true) == 1 or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("BuyGodhuman") then then
                 GodHuman:Set("✅ : God Human")
             end
         end
@@ -5810,7 +5811,7 @@ task.spawn(
                 BartiloQuest:Set("✅ : Bartilo Quest")
             end
             if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TalkTrevor","3") == nil then
-                DonSwanQuest:Set("✅ : Don Swan Quest")
+                DonSwanQuest:Set("✅ : Don Swan Quest ")
             end
             if game:GetService("ReplicatedStorage").Remotes["CommF_"]:InvokeServer("ZQuestProgress", "Check") == 1 then
                 KillDonSwan:Set("✅ : Kill Don Swan")
@@ -5821,13 +5822,13 @@ task.spawn(
 M:AddLineRight("")
 BartiloQuest = M:AddLabelRight("❌ : Bartilo Quest")
 DonSwanQuest = M:AddLabelRight("❌ : Don Swan Quest")
-KillDonSwan = M:AddLabelRight("❌ : Kill Don Swan ")
+KillDonSwan = M:AddLabelRight("❌ : Kill Don Swan")
 S:AddSeperatorLeft("Boss ")
 local Elite_Hunter_Status = S:AddLabelLeft("")
     
              function ssr()
                 if game:GetService("ReplicatedStorage"):FindFirstChild("Diablo [Lv. 1750]") or game:GetService("ReplicatedStorage"):FindFirstChild("Deandre [Lv. 1750]") or game:GetService("ReplicatedStorage"):FindFirstChild("Urban [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Diablo [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Deandre [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Urban [Lv. 1750]") then
-                    Elite_Hunter_Status:Set("Elite is : 🟢 ")  
+                    Elite_Hunter_Status:Set("Elite is : ✅ ")  
                 else
                     Elite_Hunter_Status:Set("Elite is : 🔴 ")    
                 end
