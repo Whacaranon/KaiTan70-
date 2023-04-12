@@ -4038,7 +4038,9 @@ end)
         while wait() do 
             if _G.combo and World3 then
                 pcall(function()
-if game:GetService("Workspace").Enemies:FindFirstChild("Urban [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Deandre [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Diablo [Lv. 1750]") then
+if not game:GetService("Workspace").Enemies:FindFirstChild("Urban [Lv. 1750]") or not game:GetService("Workspace").Enemies:FindFirstChild("Deandre [Lv. 1750]") or not game:GetService("Workspace").Enemies:FindFirstChild("Diablo [Lv. 1750]") then
+_G.AutoFarm = true
+elseif game:GetService("Workspace").Enemies:FindFirstChild("Urban [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Deandre [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Diablo [Lv. 1750]") then
 _G.AutoFarm = false
 end
 if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then 
@@ -4055,12 +4057,10 @@ if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false 
                                         v.Head.CanCollide = false 
                                         StartMagnetcombo = true
                                         PosMoncombo = v.HumanoidRootPart.CFrame
-                                        topos(v.HumanoidRootPart.CFrame * CFrame.new(5,16,7))
+                                        topos(v.HumanoidRootPart.CFrame * CFrame.new(0,40,0))
                                         game:GetService("VirtualUser"):CaptureController()
                                         game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
                                     until not _G.combo or not v.Parent or v.Humanoid.Health <= 0
-                              _G.AutoFarm = false
-
 end
                             end
                         end
@@ -4068,11 +4068,11 @@ end
                         StartMagnetcombo = false
                         for i,v in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do 
                            if game:GetService("ReplicatedStorage"):FindFirstChild("Urban [Lv. 1750]") then
-                                    topos(game:GetService("ReplicatedStorage"):FindFirstChild("Urban [Lv. 1750]").HumanoidRootPart.CFrame * CFrame.new(5,16,7))
+                                    topos(game:GetService("ReplicatedStorage"):FindFirstChild("Urban [Lv. 1750]").HumanoidRootPart.CFrame * CFrame.new(0,40,0))
                                 elseif game:GetService("ReplicatedStorage"):FindFirstChild("Diablo [Lv. 1750]") then
-                                    topos(game:GetService("ReplicatedStorage"):FindFirstChild("Diablo [Lv. 1750]").HumanoidRootPart.CFrame * CFrame.new(5,16,7))
+                                    topos(game:GetService("ReplicatedStorage"):FindFirstChild("Diablo [Lv. 1750]").HumanoidRootPart.CFrame * CFrame.new(0,40,0))
                                 elseif game:GetService("ReplicatedStorage"):FindFirstChild("Deandre [Lv. 1750]") then
-                                    topos(game:GetService("ReplicatedStorage"):FindFirstChild("Deandre [Lv. 1750]").HumanoidRootPart.CFrame * CFrame.new(5,16,7))
+                                    topos(game:GetService("ReplicatedStorage"):FindFirstChild("Deandre [Lv. 1750]").HumanoidRootPart.CFrame * CFrame.new(0,40,0))
                             
 
 end
@@ -5831,9 +5831,9 @@ local Elite_Hunter_Status = S:AddLabelLeft("")
     
              function ssr()
                 if game:GetService("ReplicatedStorage"):FindFirstChild("Diablo [Lv. 1750]") or game:GetService("ReplicatedStorage"):FindFirstChild("Deandre [Lv. 1750]") or game:GetService("ReplicatedStorage"):FindFirstChild("Urban [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Diablo [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Deandre [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Urban [Lv. 1750]") then
-                    Elite_Hunter_Status:Set("Elite is : ✅ ")  
+                    Elite_Hunter_Status:Set("Elite is : 🟢 ")  
                 else
-                    Elite_Hunter_Status:Set("Elite is : ❌ ")    
+                    Elite_Hunter_Status:Set("Elite is : 🔴 ")    
                 end
                 end
 spawn(function()
