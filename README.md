@@ -4038,10 +4038,10 @@ end)
         while wait() do 
             if _G.combo and World3 then
                 pcall(function()
-if not game:GetService("Workspace").Enemies:FindFirstChild("Urban [Lv. 1750]") or not game:GetService("Workspace").Enemies:FindFirstChild("Deandre [Lv. 1750]") or not game:GetService("Workspace").Enemies:FindFirstChild("Diablo [Lv. 1750]") then
-_G.AutoFarm = true
-elseif game:GetService("Workspace").Enemies:FindFirstChild("Urban [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Deandre [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Diablo [Lv. 1750]") then
+if game:GetService("Workspace").Enemies:FindFirstChild("Urban [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Deandre [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Diablo [Lv. 1750]") then
 _G.AutoFarm = false
+elseif not game:GetService("Workspace").Enemies:FindFirstChild("Urban [Lv. 1750]") and not game:GetService("Workspace").Enemies:FindFirstChild("Deandre [Lv. 1750]") and not game:GetService("Workspace").Enemies:FindFirstChild("Diablo [Lv. 1750]") then
+_G.AutoFarm = true
 end
 if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then 
                      game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter")
