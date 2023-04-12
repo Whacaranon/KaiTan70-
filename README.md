@@ -4038,11 +4038,12 @@ end)
         while wait() do 
             if _G.combo and World3 then
                 pcall(function()
+if game:GetService("Workspace").Enemies:FindFirstChild("Urban [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Deandre [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Diablo [Lv. 1750]") then
+_G.AutoFarm = false
+end
 if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then 
                      game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter")
-                      if game:GetService("Workspace").Enemies:FindFirstChild("Urban [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Deandre [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Diablo [Lv. 1750]") then
-_G.AutoFarm = false
-
+                      
                        for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
                             if v.Name == "Urban [Lv. 1750]" or v.Name == "Diablo [Lv. 1750]" or v.Name == "Deandre [Lv. 1750]" then
                                 if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
@@ -4058,8 +4059,8 @@ _G.AutoFarm = false
                                         game:GetService("VirtualUser"):CaptureController()
                                         game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
                                     until not _G.combo or not v.Parent or v.Humanoid.Health <= 0
-_G.AutoFarm = true                                
-end
+                              _G.AutoFarm = false
+
 end
                             end
                         end
@@ -4073,6 +4074,7 @@ end
                                 elseif game:GetService("ReplicatedStorage"):FindFirstChild("Deandre [Lv. 1750]") then
                                     topos(game:GetService("ReplicatedStorage"):FindFirstChild("Deandre [Lv. 1750]").HumanoidRootPart.CFrame * CFrame.new(5,16,7))
                             
+
 end
                         end
                     end
@@ -5181,22 +5183,22 @@ task.spawn(
 task.spawn(
     function()
         while task.wait() do
-            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySuperhuman", true) == 1 or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("BuySuperhuman") then then
+            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySuperhuman", true) == 1 or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("BuySuperhuman") then 
                 Superhuman:Set("✅ : Superhuman")
             end
-            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDeathStep", true) == 1 or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("BuyDeathStep") then then
+            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDeathStep", true) == 1 or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("BuyDeathStep") then 
                 DeathStep:SetT("✅ : Death Step")
             end
-            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKarate", true) == 1 or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("BuySharkmanKarate") then then
+            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKarate", true) == 1 or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("BuySharkmanKarate") then 
                 SharkmanKarate:Set("✅ : Sharkman Karate")
             end
-            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw", true) == 1 or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("BuyElectricClaw") then then
+            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw", true) == 1 or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("BuyElectricClaw") then 
                 ElectricClaw:Set("✅ : Electric Claw")
             end
-            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDragonTalon", true) == 1 or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("BuyDragonTalon") then then
+            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDragonTalon", true) == 1 or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("BuyDragonTalon") then 
                 DragonTalon:Set("✅ : Dragon Talon")
             end
-            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyGodhuman", true) == 1 or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("BuyGodhuman") then then
+            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyGodhuman", true) == 1 or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("BuyGodhuman") then 
                 GodHuman:Set("✅ : God Human")
             end
         end
@@ -5820,6 +5822,7 @@ task.spawn(
     end
 )
 M:AddLineRight("")
+M:AddeperatorLeft("Boss")
 BartiloQuest = M:AddLabelRight("❌ : Bartilo Quest")
 DonSwanQuest = M:AddLabelRight("❌ : Don Swan Quest")
 KillDonSwan = M:AddLabelRight("❌ : Kill Don Swan")
