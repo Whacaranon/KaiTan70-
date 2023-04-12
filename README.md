@@ -556,9 +556,9 @@ local WindowStrokelol = Instance.new("UIStroke")
  ScrollTab.Name = "ScrollTab"
  ScrollTab.Parent = Tab
  ScrollTab.Active = true
- ScrollTab.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+ ScrollTab.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
  ScrollTab.BackgroundTransparency = 0
- ScrollTab.Size = UDim2.new(0, 433, 0, 28)
+ ScrollTab.Size = UDim2.new(0, 433, 0, 30)
  ScrollTab.CanvasSize = UDim2.new(0, 0, 0, 0)
  ScrollTab.ScrollBarThickness = 0
  
@@ -710,7 +710,7 @@ local LabelTitle = Instance.new("TextLabel")
 		TabButton.Parent = ScrollTab
 		TabButton.Name = text.."Server"
 		TabButton.Text = text
-		TabButton.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+		TabButton.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
 		TabButton.BackgroundTransparency = 0.1
 		TabButton.Position = UDim2.new(0, 2, 0, 0)
 		TabButton.Size = UDim2.new(0, 100, 0, 28)
@@ -5831,9 +5831,9 @@ local Elite_Hunter_Status = S:AddLabelLeft("")
     
              function ssr()
                 if game:GetService("ReplicatedStorage"):FindFirstChild("Diablo [Lv. 1750]") or game:GetService("ReplicatedStorage"):FindFirstChild("Deandre [Lv. 1750]") or game:GetService("ReplicatedStorage"):FindFirstChild("Urban [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Diablo [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Deandre [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Urban [Lv. 1750]") then
-                    Elite_Hunter_Status:Set("Elite is : 🟢 ")  
+                    Elite_Hunter_Status:Set("Elite is : ✅ ")  
                 else
-                    Elite_Hunter_Status:Set("Elite is : 🔴 ")    
+                    Elite_Hunter_Status:Set("Elite is : ❌ ")    
                 end
                 end
 spawn(function()
