@@ -5822,7 +5822,7 @@ task.spawn(
     end
 )
 M:AddLineRight("")
-M:AddeperatorLeft("Boss")
+M:AddSeperatorLeft("Quest")
 BartiloQuest = M:AddLabelRight("❌ : Bartilo Quest")
 DonSwanQuest = M:AddLabelRight("❌ : Don Swan Quest")
 KillDonSwan = M:AddLabelRight("❌ : Kill Don Swan")
