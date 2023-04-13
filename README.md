@@ -59,8 +59,7 @@ end
 
 _G.AutoFarm = true
 _G.FastAttack = true
-
-_G.combo  = true
+_G.combo = true
 _G.AutoThirdSea = true
 
 if game:GetService("Players").LocalPlayer.PlayerGui.Main:FindFirstChild("ChooseTeam") then
@@ -4035,20 +4034,20 @@ end)
 end
 end)
 
-spawn(function()
+
+ spawn(function()
         while wait() do 
             if _G.combo and World3 then
                 pcall(function()
-if string.find(game.Players.LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, "Diablo") or string.find(game.Players.LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, "Urban") or string.find(game.Players.LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, "Deandre") then
-                            _G.AutoFarm = false
-elseif not string.find(game.Players.LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, "Diablo") and not string.find(game.Players.LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, "Urban") and not string.find(game.Players.LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, "Deandre") then
-                            _G.AutoFarm = true
-
+                  local QuestTitle = game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text
+if string.find(QuestTitle,"Diablo") or string.find(QuestTitle,"Deandre") or string.find(QuestTitle,"Urban") then	
+_G.AutoFarm = false
+	else
+_G.AutoFarm = true
 end
-if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then 
+                if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then 
                      game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter")
                       if game:GetService("Workspace").Enemies:FindFirstChild("Urban [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Deandre [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Diablo [Lv. 1750]") then
-                       _G.AutoFarm = false
                        for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
                             if v.Name == "Urban [Lv. 1750]" or v.Name == "Diablo [Lv. 1750]" or v.Name == "Deandre [Lv. 1750]" then
                                 if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
@@ -4066,10 +4065,9 @@ if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false 
                                     until not _G.combo or not v.Parent or v.Humanoid.Health <= 0
                                 end
                             end
+                          end
                         end
-                        
-                   end
-                   else
+                    else
                         StartMagnetcombo = false
                         for i,v in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do 
                            if game:GetService("ReplicatedStorage"):FindFirstChild("Urban [Lv. 1750]") then
@@ -4085,8 +4083,6 @@ if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false 
             end
         end
     end)
-    
-    
 
 spawn(function()
         pcall(function()
@@ -5838,9 +5834,9 @@ local Elite_Hunter_Status = S:AddLabelLeft("")
     
              function ssr()
                 if game:GetService("ReplicatedStorage"):FindFirstChild("Diablo [Lv. 1750]") or game:GetService("ReplicatedStorage"):FindFirstChild("Deandre [Lv. 1750]") or game:GetService("ReplicatedStorage"):FindFirstChild("Urban [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Diablo [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Deandre [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Urban [Lv. 1750]") then
-                    Elite_Hunter_Status:Set("Elite is : ✅ ")  
+                    Elite_Hunter_Status:Set("Elite : ✅ ")  
                 else
-                    Elite_Hunter_Status:Set("Elite is : ❌ ")    
+                    Elite_Hunter_Status:Set("Elite : ❌ ")    
                 end
                 end
 spawn(function()
