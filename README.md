@@ -4043,12 +4043,11 @@ end)
 if string.find(QuestTitle,"Diablo") or string.find(QuestTitle,"Deandre") or string.find(QuestTitle,"Urban") then	
 _G.AutoFarm = false
 	elseif not game:GetService("Workspace").Enemies:FindFirstChild("Urban [Lv. 1750]") and not game:GetService("Workspace").Enemies:FindFirstChild("Deandre [Lv. 1750]") and not game:GetService("Workspace").Enemies:FindFirstChild("Diablo [Lv. 1750]") then
-
 _G.AutoFarm = true
 end
                 if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then 
                      game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter")
-        if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then 
+if string.find(QuestTitle,"Diablo") or string.find(QuestTitle,"Deandre") or string.find(QuestTitle,"Urban") then	
                       if game:GetService("Workspace").Enemies:FindFirstChild("Urban [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Deandre [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Diablo [Lv. 1750]") then
                        for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
                             if v.Name == "Urban [Lv. 1750]" or v.Name == "Diablo [Lv. 1750]" or v.Name == "Deandre [Lv. 1750]" then
