@@ -3452,7 +3452,7 @@ if _G.AutoFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.Hu
                 NameMon = "Reborn Skeleton"
                 PUK = CFrame.new(-8817.880859375, 191.16761779785, 6298.6557617188)
                 CFrameQuest = CFrame.new(-9479.2168, 141.215088, 5566.09277, 0, 0, 1, 0, 1, -0, -1, 0, 0)
-                if _G.AutoFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
+                if _G.AutoFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 2000 then
                 ByPass(CFrameQuest)
             end
             elseif MyLevel == 2000 or MyLevel <= 2024 then
@@ -4042,11 +4042,13 @@ end)
                   local QuestTitle = game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text
 if string.find(QuestTitle,"Diablo") or string.find(QuestTitle,"Deandre") or string.find(QuestTitle,"Urban") then	
 _G.AutoFarm = false
-	else
+	elseif not game:GetService("Workspace").Enemies:FindFirstChild("Urban [Lv. 1750]") and not game:GetService("Workspace").Enemies:FindFirstChild("Deandre [Lv. 1750]") and not game:GetService("Workspace").Enemies:FindFirstChild("Diablo [Lv. 1750]") then
+
 _G.AutoFarm = true
 end
                 if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then 
                      game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter")
+        if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then 
                       if game:GetService("Workspace").Enemies:FindFirstChild("Urban [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Deandre [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Diablo [Lv. 1750]") then
                        for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
                             if v.Name == "Urban [Lv. 1750]" or v.Name == "Diablo [Lv. 1750]" or v.Name == "Deandre [Lv. 1750]" then
@@ -4067,6 +4069,7 @@ end
                             end
                           end
                         end
+end
                     else
                         StartMagnetcombo = false
                         for i,v in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do 
@@ -4083,6 +4086,8 @@ end
             end
         end
     end)
+
+
 
 spawn(function()
         pcall(function()
@@ -5808,7 +5813,32 @@ game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntranc
             end
         end)
     end)
-
+_G.AutoDragonTalon = true
+spawn(function()
+while wait() do 
+pcall(function()
+if _G.AutoDragonTalon and World3 then
+repeat wait(.1)
+										local args = {
+											[1] = "Bones",
+											[2] = "Check"
+										}
+										game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+										local args = {
+											[1] = "Bones",
+											[2] = "Buy",
+											[3] = 1,
+											[4] = 1
+										}
+										game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+									until _G.AutoDragonTalon == false or game.Players.LocalPlayer.Backpack:FindFirstChild("Fire Essence") or game.Players.LocalPlayer.Character:FindFirstChild("Fire Essence")
+end
+								if game.Players.LocalPlayer.Backpack:FindFirstChild("Fire Essence") or game.Players.LocalPlayer.Character:FindFirstChild("Fire Essence") then
+									game.ReplicatedStorage.Remotes.CommF_:InvokeServer("BuyDragonTalon",true)
+								end
+end)
+end
+end)
 task.spawn(
     function()
         while task.wait() do
