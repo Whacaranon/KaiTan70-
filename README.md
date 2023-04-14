@@ -4034,21 +4034,18 @@ end
 end)
 end
 end)
-
+ local QuestTitle = game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text
 
  spawn(function()
         while wait() do 
             if _G.combo and World3 then
                 pcall(function()
-                  local QuestTitle = game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text
-if string.find(QuestTitle,"Diablo") or string.find(QuestTitle,"Deandre") or string.find(QuestTitle,"Urban") then	
+                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter")
+     if game:GetService("Workspace").Enemies:FindFirstChild("Urban [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Deandre [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Diablo [Lv. 1750]") or string.find(QuestTitle,"Diablo") or string.find(QuestTitle,"Deandre") or string.find(QuestTitle,"Urban") then
 _G.AutoFarm = false
-	elseif not game:GetService("Workspace").Enemies:FindFirstChild("Urban [Lv. 1750]") and not game:GetService("Workspace").Enemies:FindFirstChild("Deandre [Lv. 1750]") and not game:GetService("Workspace").Enemies:FindFirstChild("Diablo [Lv. 1750]") then
+	elseif not game:GetService("Workspace").Enemies:FindFirstChild("Urban [Lv. 1750]") and not game:GetService("Workspace").Enemies:FindFirstChild("Deandre [Lv. 1750]") and not game:GetService("Workspace").Enemies:FindFirstChild("Diablo [Lv. 1750]") and not string.find(QuestTitle,"Diablo") and not string.find(QuestTitle,"Deandre") and not string.find(QuestTitle,"Urban") then
 _G.AutoFarm = true
 end
-                if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then 
-                     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter")
-if string.find(QuestTitle,"Diablo") or string.find(QuestTitle,"Deandre") or string.find(QuestTitle,"Urban") then	
                       if game:GetService("Workspace").Enemies:FindFirstChild("Urban [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Deandre [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Diablo [Lv. 1750]") then
                        for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
                             if v.Name == "Urban [Lv. 1750]" or v.Name == "Diablo [Lv. 1750]" or v.Name == "Deandre [Lv. 1750]" then
@@ -4068,8 +4065,7 @@ if string.find(QuestTitle,"Diablo") or string.find(QuestTitle,"Deandre") or stri
                                 end
                             end
                           end
-                        end
-end
+                        
                     else
                         StartMagnetcombo = false
                         for i,v in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do 
@@ -6107,7 +6103,7 @@ spawn(function()
 		tvk.FillDirectionMaxCells = 100
 		tvk.FillDirection = Enum.FillDirection.Horizontal
 
-		local cac = {"Superhuman","ElectricClaw","DragonTalon","SharkmanKarate","DeathStep","GodHuman"}
+		local cac = {"Superhuman","ElectricClaw","DragonTalon","SharkmanKarate","DeathStep","-"}
 		for k,v in pairs(cac) do
 			if ListHuhu[v] and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buy"..v,true) == 1 then 
 				local huhu = Instance.new("ImageLabel",MeleeG)
@@ -6148,4 +6144,5 @@ spawn(function()
 		end)
     
     S:AddButtonRight("Remoe ScreenKaitan",function()
-game:GetService("Players").LocalPlayer.PlayerGui.Main.Compass:Destroy()    end)
+game:GetService("Players").LocalPlayer.PlayerGui.Main.Compass:Destroy()    
+end)
