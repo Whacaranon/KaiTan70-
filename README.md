@@ -44,6 +44,7 @@ getgenv().FullySuprtHuman = true
 elseif World1 then
     getgenv().FullySuprtHuman = false
 end
+_G.AutoYama = true
 _G.Auto_Random_Bone = true
 AutoOpenDoorDofamingo = true
 _G.Auto_EvoRace = true
@@ -4084,7 +4085,17 @@ end
         end
     end)
 
-
+spawn(function()
+        while wait() do
+            if _G.AutoYama then
+                if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter","Progress") >= 30 then
+                    repeat wait(.1)
+                        fireclickdetector(game:GetService("Workspace").Map.Waterfall.SealedKatana.Handle.ClickDetector)
+                    until game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Yama") or not _G.AutoYama
+                end
+            end
+        end
+    end)
 
 spawn(function()
         pcall(function()
@@ -4180,48 +4191,6 @@ FruitList2 = {
     function()
         while task.wait() do
             if getgenv().FullySuprtHuman and World2 then
-                if
-                    game.Players.LocalPlayer.Backpack:FindFirstChild("Combat") or
-                        game.Players.LocalPlayer.Character:FindFirstChild("Combat") and
-                            game:GetService("Players")["LocalPlayer"].Data.Beli.Value >= 150000
-                 then
-                    wait(.1)
-                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBlackLeg")
-                end
-                if
-                    game.Players.LocalPlayer.Character:FindFirstChild("Superhuman") or
-                        game.Players.LocalPlayer.Backpack:FindFirstChild("Superhuman")
-                 then
-                    _G.SelectWeapon = "Superhuman"
-                end
-                if
-                    game.Players.LocalPlayer.Backpack:FindFirstChild("Black Leg") or
-                        game.Players.LocalPlayer.Character:FindFirstChild("Black Leg") or
-                        game.Players.LocalPlayer.Backpack:FindFirstChild("Electro") or
-                        game.Players.LocalPlayer.Character:FindFirstChild("Electro") or
-                        game.Players.LocalPlayer.Backpack:FindFirstChild("Fishman Karate") or
-                        game.Players.LocalPlayer.Character:FindFirstChild("Fishman Karate") or
-                        game.Players.LocalPlayer.Backpack:FindFirstChild("Dragon Claw") or
-                        game.Players.LocalPlayer.Character:FindFirstChild("Dragon Claw")
-                 then
-                    if
-                        game.Players.LocalPlayer.Backpack:FindFirstChild("Black Leg") and
-                            game.Players.LocalPlayer.Backpack:FindFirstChild("Black Leg").Level.Value <= 299
-                     then
-                        _G.SelectWeapon = "Black Leg"
-                    end
-                    if
-                        game.Players.LocalPlayer.Backpack:FindFirstChild("Electro") and
-                            game.Players.LocalPlayer.Backpack:FindFirstChild("Electro").Level.Value <= 299
-                     then
-                        _G.SelectWeapon = "Electro"
-                    end
-                    if
-                        game.Players.LocalPlayer.Backpack:FindFirstChild("Fishman Karate") and
-                            game.Players.LocalPlayer.Backpack:FindFirstChild("Fishman Karate").Level.Value <= 299
-                     then
-                        _G.SelectWeapon = "Fishman Karate"
-                    end
                     if getgenv().FullySuprtHuman and game.Players.LocalPlayer.Data.Fragments.Value < 1500 and World2 and game:GetService("Players").LocalPlayer.Data.Level.Value >= 1100 then
                         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LoadFruit", (FruitList2))
                         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Cousin", "Buy")
@@ -4232,8 +4201,6 @@ FruitList2 = {
                         _G.Auto_StartRaid = true
                         _G.AutoSuperhuman = false
                     elseif getgenv().FullySuprtHuman and game.Players.LocalPlayer.Data.Fragments.Value >= 1500 and World2 then
-                        unequip("Fishman Karate")
-                        wait(.1)
                         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(
                             "BlackbeardReward",
                             "DragonClaw",
@@ -4250,20 +4217,11 @@ FruitList2 = {
                         _G.AutoBuyChip = false
                         _G.Auto_StartRaid = false
                         _G.AutoSuperhuman = true
-                        if
-                            game.Players.LocalPlayer.Backpack:FindFirstChild("Dragon Claw") and
-                                game.Players.LocalPlayer.Backpack:FindFirstChild("Dragon Claw").Level.Value <= 299
-                         then
-                            _G.SelectWeapon = "Dragon Claw"
-                        end
-                        wait(0.1)
-                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySuperhuman")
-                    end
-                end
-            end
+                      end  
+               end        
         end
-    end
-)
+    end)
+
 task.spawn(
     function()
         pcall(
