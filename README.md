@@ -4032,7 +4032,7 @@ _G.AutoDoughtBoss = true
 
 spawn(function()
         while wait() do
-            if _G.AutoDoughtBoss and World3 then
+            if _G.AutoDoughtBoss2 and World3 then
                 pcall(function()
 if game.Workspace:FindFirstChild("Enemies"):FindFirstChild("Dough King [Lv. 2300] [Raid Boss]") or game:GetService("ReplicatedStorage"):FindFirstChild("Dough King [Lv. 2300] [Raid Boss]") then
 _G.AutoFarm = false
@@ -4050,7 +4050,7 @@ _G.combo = false
                                         topos(v.HumanoidRootPart.CFrame * CFrame.new(0,-45,-40))
                                         game:GetService("VirtualUser"):CaptureController()
                                         game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
-                                    until not _G.AutoDoughtBoss or not v.Parent or v.Humanoid.Health <= 0
+                                    until not _G.AutoDoughtBoss2 or not v.Parent or v.Humanoid.Health <= 0
 _G.AutoFarm = true
 _G.combo = true
                                 end
@@ -4088,6 +4088,9 @@ spawn(function()
 if game.ReplicatedStorage:FindFirstChild("Cake Prince [Lv. 2300] [Raid Boss]") or game:GetService("Workspace").Enemies:FindFirstChild("Cake Prince [Lv. 2300] [Raid Boss]") then
 _G.AutoFarm = false
 _G.combo = false
+end
+                    if game:GetService("Workspace").Enemies:FindFirstChild("Cake Prince [Lv. 2300] [Raid Boss]") then
+
 
                         for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
                             if v.Name == "Cake Prince [Lv. 2300] [Raid Boss]" then
@@ -6028,6 +6031,42 @@ spawn(function()
         while task.wait() do
             pcall(function()
                 ssr()
+            end)
+        end
+    end)
+
+local Katakuri = S:AddLabelLeft("")
+    
+             function sasr()
+if game.ReplicatedStorage:FindFirstChild("Cake Prince [Lv. 2300] [Raid Boss]") or game:GetService("Workspace").Enemies:FindFirstChild("Cake Prince [Lv. 2300] [Raid Boss]") then               
+     Katakuri:Set("Katakuri : ✅ ")  
+                else
+
+                    Katakuri:Set("Katakuri : ❌ ")    
+                end
+                end
+spawn(function()
+        while task.wait() do
+            pcall(function()
+                sasr()
+            end)
+        end
+    end)
+
+local Katakuri2 = S:AddLabelLeft("")
+    
+             function sasr()
+if game.Workspace:FindFirstChild("Enemies"):FindFirstChild("Dough King [Lv. 2300] [Raid Boss]") or game:GetService("ReplicatedStorage"):FindFirstChild("Dough King [Lv. 2300] [Raid Boss]") then
+     Katakuri2:Set("Katakuri V2 : ✅ ")  
+                else
+
+                    Katakuri2:Set("Katakuri V2 : ❌ ")    
+                end
+                end
+spawn(function()
+        while task.wait() do
+            pcall(function()
+                sasr2()
             end)
         end
     end)
