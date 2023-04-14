@@ -3794,7 +3794,7 @@ AttackRandomType = 1
 task.spawn(function()
 	while wait() do 
 		AttackRandomType = math.random(1,5)
-		wait(0.4)
+		wait(0.02)
 	end
 end)
 
