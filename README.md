@@ -6055,7 +6055,7 @@ spawn(function()
 
 local Katakuri2 = S:AddLabelLeft("")
     
-             function sasr()
+             function sasr2()
 if game.Workspace:FindFirstChild("Enemies"):FindFirstChild("Dough King [Lv. 2300] [Raid Boss]") or game:GetService("ReplicatedStorage"):FindFirstChild("Dough King [Lv. 2300] [Raid Boss]") then
      Katakuri2:Set("Katakuri V2 : ✅ ")  
                 else
