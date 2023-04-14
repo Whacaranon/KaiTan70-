@@ -6035,14 +6035,14 @@ spawn(function()
         end
     end)
 
-local Katakuri = S:AddLabelLeft("")
+local Katakuriq = S:AddLabelLeft("")
     
              function sasr()
 if game.ReplicatedStorage:FindFirstChild("Cake Prince [Lv. 2300] [Raid Boss]") or game:GetService("Workspace").Enemies:FindFirstChild("Cake Prince [Lv. 2300] [Raid Boss]") then               
-     Katakuri:Set("Katakuri : ✅ ")  
+     Katakuriq:Set("Katakuri : ✅ ")  
                 else
 
-                    Katakuri:Set("Katakuri : ❌ ")    
+                    Katakuriq:Set("Katakuri : ❌ ")    
                 end
                 end
 spawn(function()
