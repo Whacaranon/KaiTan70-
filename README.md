@@ -4035,12 +4035,66 @@ end)
 end
 end)
 _G.AutoDoughtBoss = true
+
 spawn(function()
         while wait() do
             if _G.AutoDoughtBoss and World3 then
                 pcall(function()
-                    if game:GetService("Workspace").Enemies:FindFirstChild("Cake Prince [Lv. 2300] [Raid Boss]") then
+if game.Workspace:FindFirstChild("Enemies"):FindFirstChild("Dough King [Lv. 2300] [Raid Boss]") or game:GetService("ReplicatedStorage"):FindFirstChild("Dough King [Lv. 2300] [Raid Boss]") then
 _G.AutoFarm = false
+_G.combo = false
+
+                        for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                            if v.Name == "Dough King [Lv. 2300] [Raid Boss]" then
+                                if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                                    repeat task.wait()
+                                        AutoHaki()
+                                        Equip(WeaponName)
+                                        v.HumanoidRootPart.CanCollide = false
+                                        v.Humanoid.WalkSpeed = 0
+                                        v.HumanoidRootPart.Size = Vector3.new(0,1,0)
+                                        topos(v.HumanoidRootPart.CFrame * CFrame.new(0,-45,-40))
+                                        game:GetService("VirtualUser"):CaptureController()
+                                        game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
+                                    until not _G.AutoDoughtBoss or not v.Parent or v.Humanoid.Health <= 0
+_G.AutoFarm = true
+_G.combo = true
+                                end
+                            end
+                        end
+                    else
+                        if game:GetService("ReplicatedStorage"):FindFirstChild("Dough King [Lv. 2300] [Raid Boss]") then
+                            topos(game:GetService("ReplicatedStorage"):FindFirstChild("Dough King [Lv. 2300] [Raid Boss]").HumanoidRootPart.CFrame * CFrame.new(0,-45,-40))
+                            else
+if game:GetService("Workspace").Map.CakeLoaf:FindFirstChild("RedDoor") then
+							if game.Players.LocalPlayer.Character:FindFirstChild("Red Key") or game.Players.LocalPlayer.Backpack:FindFirstChild("Red Key") then
+								RedDorTween = topos(CFrame.new(-2681.97998, 64.3921585, -12853.7363, 0.149007782, -1.87902192e-08, 0.98883605, 3.60619588e-08, 1, 1.35681812e-08, -0.98883605, 3.36376011e-08, 0.149007782))
+								if (CFrame.new(-2681.97998, 64.3921585, -12853.7363, 0.149007782, -1.87902192e-08, 0.98883605, 3.60619588e-08, 1, 1.35681812e-08, -0.98883605, 3.36376011e-08, 0.149007782).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 5 then
+									if RedDorTween then RedDorTween:Stop() end
+									game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2681.97998, 64.3921585, -12853.7363, 0.149007782, -1.87902192e-08, 0.98883605, 3.60619588e-08, 1, 1.35681812e-08, -0.98883605, 3.36376011e-08, 0.149007782)
+									wait(0.5)
+									EquipWeapon("Red Key")
+									wait(0.5)
+								end
+	end	
+end
+end							
+end
+
+	end)		
+end				
+	end
+				
+			end)
+
+spawn(function()
+        while wait() do
+            if _G.AutoDoughtBoss and World3 then
+                pcall(function()
+if game.ReplicatedStorage:FindFirstChild("Cake Prince [Lv. 2300] [Raid Boss]") or game:GetService("Workspace").Enemies:FindFirstChild("Cake Prince [Lv. 2300] [Raid Boss]") then
+_G.AutoFarm = false
+_G.combo = false
+
                         for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
                             if v.Name == "Cake Prince [Lv. 2300] [Raid Boss]" then
                                 if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
@@ -4055,6 +4109,7 @@ _G.AutoFarm = false
                                         game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
                                     until not _G.AutoDoughtBoss or not v.Parent or v.Humanoid.Health <= 0
 _G.AutoFarm = true
+_G.combo = true
                                 end
                             end
                         end
