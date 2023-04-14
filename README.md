@@ -4034,12 +4034,13 @@ end
 end)
 end
 end)
- local QuestTitle = game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text
 
  spawn(function()
         while wait() do 
             if _G.combo and World3 then
                 pcall(function()
+ local QuestTitle = game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text
+
                 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter")
      if game:GetService("Workspace").Enemies:FindFirstChild("Urban [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Deandre [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Diablo [Lv. 1750]") or string.find(QuestTitle,"Diablo") or string.find(QuestTitle,"Deandre") or string.find(QuestTitle,"Urban") then
 _G.AutoFarm = false
