@@ -4013,10 +4013,8 @@ while wait() do
 pcall(function()
 if AutoOpenDoorDofamingo and game:GetService("Players").LocalPlayer.Data.Level.Value >= 1400 and World2 then
 _G.StoreFruit = false
-local A_1 = "LoadFruit"
-local A_2 = (fruit1M)
-local Event = game:GetService("ReplicatedStorage").Remotes["CommF_"]
-Event:InvokeServer(A_1, A_2)
+for i,v in pairs(fruit1M) do
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LoadFruit", v)
 local A_1 = "TalkTrevor"
 local A_2 = "2"
 local Event = game:GetService("ReplicatedStorage").Remotes["CommF_"]
@@ -4031,6 +4029,7 @@ local Event = game:GetService("ReplicatedStorage").Remotes["CommF_"]
 Event:InvokeServer(A_11, A_22)
 wait(5)
 _G.AutoFarmSwanGlasses = true
+end
 end
 end)
 end
@@ -4192,7 +4191,8 @@ FruitList2 = {
         while task.wait() do
             if getgenv().FullySuprtHuman and World2 then
                     if getgenv().FullySuprtHuman and game.Players.LocalPlayer.Data.Fragments.Value < 1500 and World2 and game:GetService("Players").LocalPlayer.Data.Level.Value >= 1100 then
-                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LoadFruit", (FruitList2))
+                        for i,v in pairs(FruitList2) do
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LoadFruit", v)
                         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Cousin", "Buy")
                         _G.SelectChip = "Flame"
                         _G.Auto_Dungeon = true
@@ -4200,6 +4200,7 @@ FruitList2 = {
                         _G.AutoBuyChip = true
                         _G.Auto_StartRaid = true
                         _G.AutoSuperhuman = false
+end
                     elseif getgenv().FullySuprtHuman and game.Players.LocalPlayer.Data.Fragments.Value >= 1500 and World2 then
                         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(
                             "BlackbeardReward",
@@ -4217,7 +4218,9 @@ FruitList2 = {
                         _G.AutoBuyChip = false
                         _G.Auto_StartRaid = false
                         _G.AutoSuperhuman = true
-                      end  
+                     
+   
+end
                end        
         end
     end)
