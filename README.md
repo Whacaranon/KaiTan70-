@@ -44,6 +44,7 @@ getgenv().FullySuprtHuman = true
 elseif World1 then
     getgenv().FullySuprtHuman = false
 end
+_G.SelectWeapon = "Melee"
 _G.AutoYama = true
 _G.Auto_Random_Bone = true
 AutoOpenDoorDofamingo = true
@@ -3777,14 +3778,7 @@ end)
 						if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
 							WeaponName = v.Name
 						end
-					end
-				end
-			else
-				for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-					if v.ToolTip == "Melee" then
-						if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
-							WeaponName = v.Name
-						end
+
 					end
 				end
 			end
